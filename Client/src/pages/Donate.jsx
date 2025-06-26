@@ -286,19 +286,19 @@ const Donate = () => {
                         background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%)',
                         color: 'white'
                     }}>
-                        <Title order={3} mb="lg" style={{ color: 'white' }}>
+                        <Title order={3} mb="lg" style={{ color: 'white', textAlign: 'center' }}>
                             Contact Information
                         </Title>
-                        <Group gap="xl" wrap="wrap">
-                            <div>
+                        <Group gap="xl" wrap="wrap" justify="center">
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Phone:</Text>
                                 <Text>609-240-9511</Text>
                             </div>
-                            <div>
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Email:</Text>
                                 <Text>info@foundationjewish.org</Text>
                             </div>
-                            <div>
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Address:</Text>
                                 <Text>457 Nassau Street, Suite 101</Text>
                                 <Text>Princeton, NJ 08540</Text>
