@@ -16,6 +16,7 @@
     "@mantine/hooks": "^8.1.2",
     "@mantine/modals": "^8.1.2",
     "@mantine/notifications": "^8.1.2",
+    "@microlink/react": "^5.5.23",
     "@tabler/icons-react": "^3.34.0",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
