@@ -13,6 +13,7 @@ function App() {
           <div style={{ marginTop: '60px' }}>
             <Routes>
               <Route path="/" element={<Landing />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </div>
         </div>
