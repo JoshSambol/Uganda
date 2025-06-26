@@ -3,6 +3,7 @@ import './App.css'
 import Landing from './pages/Landing'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
+import About from './pages/About'
 function App() {
 
   return (
