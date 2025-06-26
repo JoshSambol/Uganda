@@ -31,8 +31,10 @@ function Hero() {
         </Title>
         
         <Text size="xl" mb="lg" style={{ maxWidth: '700px', margin: '0 auto 2rem' }}>
-          For over a century, the Abayudaya Jewish community has remained steadfast in their commitment to Torah, Shabbat, and Jewish traditions. Today, their children face an urgent crisis that threatens the future of Jewish education in Uganda.
-        </Text>
+          
+In Uganda, the Abayudaya's commitment to Jewish education is <b>challenged by limited resources</b>. The absence of consistent funding jeopardizes not only academic growth but also the preservation of Jewish identity in the region. 
+Together, we can transform the lives of the Jewish people of Uganda. 
+          </Text>
 
         <Group justify="center" gap="md" mb="xl">
           <Button 
@@ -118,6 +120,7 @@ function Hero() {
         style={{ marginTop: '3rem' }}
       >
         <Badge 
+          className='badge'
           size="lg" 
           variant="light" 
           style={{ 
@@ -128,10 +131,58 @@ function Hero() {
           }}
         >
           <IconHeartHandshake size={16} style={{ marginRight: '0.5rem' }} />
-          Your support can make an impact that will last for generations
+          <b>Your support can make an impact that will last for generations to come.</b>
         </Badge>
       </motion.div>
+
+      {/* Mobile-only bottom element */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="mobile-bottom"
+        style={{ 
+          marginTop: '2rem',
+          padding: '1.5rem',
+          textAlign: 'center'
+        }}
+      >
+        <div style={{
+          width: '100%',
+          height: '50px',
+          padding: '0.2rem 1rem 0.3rem 1rem',
+          scaleToFit: true,
+          backgroundColor: 'rgba(255, 255, 255, 0.3)',
+          borderRadius: '30px',
+          margin: '0 auto 1rem'
+        }} >
+          <Text size="sm" c="white" style={{ opacity: 0.8, fontWeight: 900 }}>
+            Your support can make an impact that will last for generations to come.
+          </Text>
+        </div>
+      </motion.div>
+
+      <style jsx>{`
+        .badge {
+          display: none;
+        }
+        
+        .mobile-bottom {
+          display: block;
+        }
+        
+        @media (min-width: 768px) {
+          .badge {
+            display: flex !important;
+          }
+          
+          .mobile-bottom {
+            display: none !important;
+          }
+        }
+      `}</style>
     </Container>
+    
   );
 }
 
