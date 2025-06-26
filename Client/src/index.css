@@ -29,11 +29,31 @@
 .rotating-gradient::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(135deg, #1e3c72 0%, #4f79c2 50%, #90c2fb 100%);
-  animation: rotateGradient 8s linear infinite;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(135deg, #14294e 0%, #5f83c2 50%, #69a5eb 100%);
+  animation: rotateGradient 20s linear infinite;
   z-index: -1;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .rotating-gradient::before {
+    animation: rotateGradient 30s linear infinite;
+    top: -200%;
+    left: -200%;
+    width: 500%;
+    height: 500%;
+  }
+}
+
+/* Disable animation on devices that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .rotating-gradient::before {
+    animation: none;
+  }
 }
