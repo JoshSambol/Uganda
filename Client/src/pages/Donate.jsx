@@ -1,22 +1,23 @@
 import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider, Alert } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { IconHeart, IconExternalLink, IconAlertCircle } from '@tabler/icons-react';
-import { useState, useEffect } from 'react';
+import { IconHeart, IconExternalLink, IconAlertCircle, IconCreditCard, IconShieldCheck } from '@tabler/icons-react';
+import jcfgmLogo from '../assets/JCFGM logo.png';
+// import { useState, useEffect } from 'react';
 
 const Donate = () => {
     const navigate = useNavigate();
-    const [iframeError, setIframeError] = useState(false);
-    const [iframeLoading, setIframeLoading] = useState(true);
+    // const [iframeError, setIframeError] = useState(false);
+    // const [iframeLoading, setIframeLoading] = useState(true);
 
-    const handleIframeLoad = () => {
-        setIframeLoading(false);
-    };
+    // const handleIframeLoad = () => {
+    //     setIframeLoading(false);
+    // };
 
-    const handleIframeError = () => {
-        setIframeError(true);
-        setIframeLoading(false);
-    };
+    // const handleIframeError = () => {
+    //     setIframeError(true);
+    //     setIframeLoading(false);
+    // };
 
     return (
         <Container className='donate-container' size="xl" style={{ 
@@ -50,83 +51,95 @@ const Donate = () => {
             >
                 <Card shadow="lg" padding="xl" radius="md" style={{ 
                     backgroundColor: 'white',
-                    minHeight: '700px',
+                    minHeight: '300px',
                     position: 'relative',
                     maxWidth: '1200px',
                     margin: '0 auto'
                 }}>
                 <Title order={2} mb="xl" style={{ color: '#1e3c72', textAlign: 'center' }}>Donate via credit/debit card</Title>
-                    {iframeLoading && (
-                        <div style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            textAlign: 'center',
-                            zIndex: 1
-                        }}>
-                            <div style={{
-                                width: '50px',
-                                height: '50px',
-                                border: '4px solid #f3f3f3',
-                                borderTop: '4px solid #1e3c72',
-                                borderRadius: '50%',
-                                animation: 'spin 1s linear infinite',
-                                margin: '0 auto 1rem'
-                            }} />
-                            <Text c="dimmed">Loading donation form...</Text>
-                            <Text c="dimmed">Not loading? Visit <a href="https://jcfgm.donorsphere.org/donate/4e77f079-8adf-4b59-93a3-14d847218d82" target="_blank" rel="noopener noreferrer">donorsphere</a> directly</Text>
-                        </div>
-                    )}
-
-                    {iframeError ? (
-                        <div style={{ textAlign: 'center', padding: '2rem' }}>
-                            <IconAlertCircle size={60} style={{ color: '#ff6b6b', margin: '0 auto 1rem', display: 'block' }} />
-                            <Title order={3} mb="md" style={{ color: '#1e3c72' }}>
-                                Unable to Load Donation Form
-                            </Title>
-                            <Text mb="xl" c="dimmed">
-                                The donation form couldn't be loaded directly. Please click the button below to access our secure donation page.
-                            </Text>
-                            <Group justify="center" gap="md">
-                                <Button 
-                                    size="lg" 
-                                    variant="filled" 
-                                    leftSection={<IconExternalLink size={20} />}
-                                    onClick={() => window.open('https://jcfgm.donorsphere.org/donate/4e77f079-8adf-4b59-93a3-14d847218d82', '_blank')}
-                                    style={{ backgroundColor: '#1e3c72' }}
-                                >
-                                    Open Donation Page
-                                </Button>
-                                <Button 
-                                    size="lg" 
-                                    variant="outline" 
-                                    onClick={() => window.location.reload()}
-                                    style={{ borderColor: '#1e3c72', color: '#1e3c72' }}
-                                >
-                                    Try Again
-                                </Button>
-                            </Group>
-                        </div>
-                    ) : (
-                        <iframe 
-                            src="http://localhost:3001/proxy?url=https://jcfgm.donorsphere.org/donate/4e77f079-8adf-4b59-93a3-14d847218d82" 
-                            width="100%" 
-                            height="700px" 
+                    
+                    {/* Custom Donation Card */}
+                    <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => window.open('https://jcfgm.donorsphere.org/donate/4e77f079-8adf-4b59-93a3-14d847218d82', '_blank')}
+                    >
+                        <Card 
+                            shadow="lg" 
+                            padding="xl" 
+                            radius="lg" 
                             style={{ 
-                                border: 'none',
-                                borderRadius: '8px',
-                                opacity: iframeLoading ? 0 : 1,
-                                transition: 'opacity 0.3s ease'
+                                background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                                border: '2px solid #e1e5e9',
+                                transition: 'all 0.3s ease',
+                                position: 'relative',
+                                overflow: 'hidden'
                             }}
-                            onLoad={handleIframeLoad}
-                            onError={handleIframeError}
-                            title="Donation Form"
-                            sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
-                            allow="payment"
-                        />
-                    )}
-                    <Text size="sm" c="dimmed" style={{ textAlign: 'center' }}>
+                        >
+                            {/* Background Pattern */}
+                            <div style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                width: '150px',
+                                height: '150px',
+                                background: 'linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(74, 144, 226, 0.05) 100%)',
+                                borderRadius: '50%',
+                                transform: 'translate(50px, -50px)',
+                                zIndex: 0
+                            }} />
+                            
+                            <div style={{ position: 'relative', zIndex: 1 }}>
+                                <Group justify="space-between" align="center" mb="lg">
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <img 
+                                            src={jcfgmLogo} 
+                                            alt="JCFGM Logo" 
+                                            style={{ 
+                                                width: '60px', 
+                                                height: '60px', 
+                                                objectFit: 'contain',
+                                                borderRadius: '8px'
+                                            }} 
+                                        />
+                                        <div>
+                                            <Title order={3} style={{ color: '#1e3c72', margin: 0 }}>
+                                                Secure Online Donation
+                                            </Title>
+                                            <Text size="sm" c="dimmed" style={{ margin: 0 }}>
+                                                Jewish Community Foundation of Greater Mercer
+                                            </Text>
+                                        </div>
+                                    </div>
+                                    <IconExternalLink size={24} style={{ color: '#1e3c72' }} />
+                                </Group>
+                                
+                                <Divider mb="lg" />
+                                
+                                <Group gap="xl" wrap="wrap">
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <IconCreditCard size={20} style={{ color: '#1e3c72' }} />
+                                        <Text size="sm" fw={500}>Credit/Debit Cards Accepted</Text>
+                                    </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <IconShieldCheck size={20} style={{ color: '#1e3c72' }} />
+                                        <Text size="sm" fw={500}>SSL Secured</Text>
+                                    </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <IconHeart size={20} style={{ color: '#1e3c72' }} />
+                                        <Text size="sm" fw={500}>Tax Deductible</Text>
+                                    </div>
+                                </Group>
+                                
+                                <Text size="sm" c="dimmed" mt="md" style={{ fontStyle: 'italic' }}>
+                                    Click to access our secure donation portal powered by DonorSphere
+                                </Text>
+                            </div>
+                        </Card>
+                    </motion.div>
+                    
+                    <Text size="sm" c="dimmed" style={{ textAlign: 'center', marginTop: '1rem' }}>
                         <b>Having trouble?  </b> Please visit <a href="https://jcfgm.donorsphere.org/donate/4e77f079-8adf-4b59-93a3-14d847218d82" target="_blank" rel="noopener noreferrer">donorsphere</a> directly.
                     </Text>
                 </Card>
@@ -146,30 +159,16 @@ const Donate = () => {
                         minWidth: '250px',
                         textAlign: 'center'
                     }}>
-                        <IconHeart size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
+                        <IconShieldCheck size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
                         <Title order={4} mb="xs" style={{ color: '#1e3c72' }}>
                             Secure Donations
                         </Title>
                         <Text size="sm" c="dimmed">
-                            All donations are processed securely through our trusted partner.
+                            All donations are processed securely through our trusted partners.
                         </Text>
                     </Card>
 
-                    <Card shadow="sm" padding="lg" radius="md" style={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                        backdropFilter: 'blur(10px)',
-                        minWidth: '250px',
-                        textAlign: 'center'
-                    }}>
-                        <IconHeart size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
-                        <Title order={4} mb="xs" style={{ color: '#1e3c72' }}>
-                            Tax Deductible
-                        </Title>
-                        <Text size="sm" c="dimmed">
-                            Your donation is tax-deductible to the extent allowed by law.
-                        </Text>
-                    </Card>
-
+                    
                     <Card shadow="sm" padding="lg" radius="md" style={{ 
                         backgroundColor: 'rgba(255, 255, 255, 0.8)',
                         backdropFilter: 'blur(10px)',
@@ -287,19 +286,19 @@ const Donate = () => {
                         background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%)',
                         color: 'white'
                     }}>
-                        <Title order={3} mb="lg" style={{ color: 'white' }}>
+                        <Title order={3} mb="lg" style={{ color: 'white', textAlign: 'center' }}>
                             Contact Information
                         </Title>
-                        <Group gap="xl" wrap="wrap">
-                            <div>
+                        <Group gap="xl" wrap="wrap" justify="center">
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Phone:</Text>
                                 <Text>609-240-9511</Text>
                             </div>
-                            <div>
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Email:</Text>
                                 <Text>info@foundationjewish.org</Text>
                             </div>
-                            <div>
+                            <div style={{ textAlign: 'center' }}>
                                 <Text fw={600} mb="xs">Address:</Text>
                                 <Text>457 Nassau Street, Suite 101</Text>
                                 <Text>Princeton, NJ 08540</Text>

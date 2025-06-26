@@ -62,21 +62,9 @@ const Nav = () => {
                                 {item.label}
                             </Button>
                         ))}
-                    </Group>
 
-                    {/* Social Icons - Desktop */}
-                    <Group gap="xs" className="desktop-nav">
-                        <ActionIcon variant="transparent" size="md">
-                            <IconBrandTwitter size={18} style={{ color: '#1e3c72' }} />
-                        </ActionIcon>
-                        <ActionIcon variant="transparent" size="md">
-                            <IconBrandYoutube size={18} style={{ color: '#1e3c72' }} />
-                        </ActionIcon>
-                        <ActionIcon variant="transparent" size="md">
-                            <IconBrandInstagram size={18} style={{ color: '#1e3c72' }} />
-                        </ActionIcon>
                     </Group>
-
+                    <Text size="sm" c="dimmed" mb="md"><a href="https://www.JoshuaSambol.com" target="_blank" rel="noopener noreferrer">Joshua Sambol</a> | Website Manager</Text>
                     {/* Mobile Hamburger Menu */}
                     <Burger
                         opened={opened}
@@ -122,18 +110,7 @@ const Nav = () => {
                     ))}
                     
                     <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '1rem' }}>
-                        <Text size="sm" c="dimmed" mb="md">Follow Us</Text>
-                        <Group gap="md">
-                            <ActionIcon variant="transparent" size="lg">
-                                <IconBrandTwitter size={20} style={{ color: '#1e3c72' }} />
-                            </ActionIcon>
-                            <ActionIcon variant="transparent" size="lg">
-                                <IconBrandYoutube size={20} style={{ color: '#1e3c72' }} />
-                            </ActionIcon>
-                            <ActionIcon variant="transparent" size="lg">
-                                <IconBrandInstagram size={20} style={{ color: '#1e3c72' }} />
-                            </ActionIcon>
-                        </Group>
+                        <Text size="sm" c="dimmed" mb="md"><a href="https://www.JoshuaSambol.com" target="_blank" rel="noopener noreferrer">Joshua Sambol</a> | Website Manager</Text>
                     </div>
                 </Stack>
             </Drawer>
