@@ -2,17 +2,22 @@ import { useState } from 'react'
 import './App.css'
 import Landing from './pages/Landing'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
 function App() {
 
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-        </Routes>
+        <div style={{ position: 'relative' }}>
+          <Nav />
+          <div style={{ marginTop: '60px' }}>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+            </Routes>
+          </div>
+        </div>
       </Router>
     </>
   )
 }
-
 export default App
