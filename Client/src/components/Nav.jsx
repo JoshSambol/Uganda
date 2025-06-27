@@ -64,7 +64,6 @@ const Nav = () => {
                         ))}
 
                     </Group>
-                    <Text size="sm" c="dimmed" mb="md"><a href="https://www.JoshuaSambol.com" target="_blank" rel="noopener noreferrer">Joshua Sambol</a> | Website Manager</Text>
                     {/* Mobile Hamburger Menu */}
                     <Burger
                         opened={opened}
