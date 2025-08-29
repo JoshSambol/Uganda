@@ -1,6 +1,6 @@
 import { Container, Title, Text, Button, Group, Stack, Card, Badge } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { IconHeart, IconUsers, IconGlobe, IconHeartHandshake } from '@tabler/icons-react';
 
 function Hero() {

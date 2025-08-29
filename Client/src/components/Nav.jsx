@@ -2,7 +2,7 @@ import { Group, ActionIcon, Text, Button, Container, Stack, Burger, Drawer } fro
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconMenu2 } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Title, Card } from '@mantine/core';
 import heroImage16x9 from '../assets/16-9.png';
 import heroImage9x16 from '../assets/9-16.png';

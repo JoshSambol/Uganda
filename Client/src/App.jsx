@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import About from './pages/About'
 import Donate from './pages/Donate'
+import Contact from './pages/Contact'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/about" element={<About />} />
               <Route path="/donate" element={<Donate />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
         </div>
