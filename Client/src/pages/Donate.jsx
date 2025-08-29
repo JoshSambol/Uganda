@@ -1,5 +1,5 @@
 import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider, Alert } from '@mantine/core';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { IconHeart, IconExternalLink, IconAlertCircle, IconCreditCard, IconShieldCheck } from '@tabler/icons-react';
 import jcfgmLogo from '../assets/JCFGM logo.png';
@@ -26,7 +26,7 @@ const Donate = () => {
             paddingTop: '100px', 
             paddingBottom: '4rem', 
             minWidth: '100vw', 
-            background: 'linear-gradient(135deg,rgba(52, 114, 228, 0.54) 0%,rgba(152, 190, 255, 0.35) 50%,rgb(255, 255, 255) 100%)' 
+            background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%)' 
         }}>
             {/* Hero Section */}
             <motion.div
@@ -35,7 +35,7 @@ const Donate = () => {
                 transition={{ duration: 0.8 }}
                 style={{ textAlign: 'center', marginBottom: '3rem' }}
             >
-                <Title size="3rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700 }}>
+                <Title size="3rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
                     Donate to Keep Jewish Education Alive
                 </Title>
                 <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#666' }}>

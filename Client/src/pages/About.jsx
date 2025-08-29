@@ -1,5 +1,5 @@
 import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider } from '@mantine/core';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { IconHeart, IconUsers, IconSchool, IconGlobe, IconHeartHandshake } from '@tabler/icons-react';
 
@@ -7,7 +7,7 @@ const About = () => {
     const navigate = useNavigate();
 
     return (
-        <Container className='about-container' size="lg" style={{ paddingLeft: '20rem', paddingRight: '20rem', paddingTop: '100px', paddingBottom: '4rem', minWidth: '100vw', background: 'linear-gradient(135deg,rgba(52, 114, 228, 0.54) 0%,rgba(152, 190, 255, 0.35) 50%,rgb(255, 255, 255) 100%)' }}>
+        <Container className='about-container' size="lg" style={{ paddingLeft: '20rem', paddingRight: '20rem', paddingTop: '100px', paddingBottom: '4rem', minWidth: '100vw', background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%)' }}>
             {/* Hero Section */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ const About = () => {
                 transition={{ duration: 0.8 }}
                 style={{ textAlign: 'center', marginBottom: '4rem' }}
             >
-                <Title size="3rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700 }}>
+                <Title size="3rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
                     Who we are
                 </Title>
                 <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#666' }}>
@@ -53,7 +53,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center' }}>
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
                     Meet the Jewish Community of Uganda
                 </Title>
                 
@@ -135,7 +135,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center' }}>
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
                     Our Supporting Partners
                 </Title>
                 <Group justify="center" gap="lg" wrap="wrap">

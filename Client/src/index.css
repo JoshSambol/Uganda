@@ -33,7 +33,7 @@
   left: -150%;
   width: 400%;
   height: 400%;
-  background: linear-gradient(135deg, #0e1e3b 0%, #80b7f7 100%);
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%);
   animation: rotateGradient 20s linear infinite;
   z-index: -1;
   will-change: transform;

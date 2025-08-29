@@ -1,6 +1,6 @@
 import { Container, Title, Text, Button } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Hero from '../components/Hero';
 
 function Landing() {
