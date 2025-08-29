@@ -12,48 +12,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes rotateGradient {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.rotating-gradient {
+.hero-container {
   position: relative;
   overflow: hidden;
 }
 
-.rotating-gradient::before {
-  content: '';
-  position: absolute;
-  top: -150%;
-  left: -150%;
-  width: 400%;
-  height: 400%;
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%);
-  animation: rotateGradient 20s linear infinite;
-  z-index: -1;
-  will-change: transform;
-  transform-origin: center center;
-}
-
-/* Mobile optimizations */
+/* Mobile optimizations for hero image */
 @media (max-width: 768px) {
-  .rotating-gradient::before {
-    animation: rotateGradient 30s linear infinite;
-    top: -200%;
-    left: -200%;
-    width: 500%;
-    height: 500%;
+  .hero-container {
+    background-size: cover !important;
+    background-position: center !important;
   }
 }
 
-/* Disable animation on devices that prefer reduced motion */
+/* Disable animations on devices that prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .rotating-gradient::before {
-    animation: none;
+  .hero-container {
+    transition: none;
   }
 }
