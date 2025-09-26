@@ -8,6 +8,7 @@ import Donate from './pages/Donate'
 import Contact from './pages/Contact'
 import Schools from './pages/Schools'
 import Gallery from './pages/Gallery'
+import Footer from './components/Footer'
 function App() {
 
   return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
+          <Footer />
         </div>
       </Router>
     </>
