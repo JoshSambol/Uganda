@@ -1,8 +1,15 @@
-import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider, Alert } from '@mantine/core';
+import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider, Alert, Grid, Image, Box } from '@mantine/core';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { IconHeart, IconExternalLink, IconAlertCircle, IconCreditCard, IconShieldCheck } from '@tabler/icons-react';
+import { IconHeart, IconExternalLink, IconAlertCircle, IconCreditCard, IconShieldCheck, IconSchool, IconUsers } from '@tabler/icons-react';
 import jcfgmLogo from '../assets/JCFGM logo.png';
+import abayudayaLogo from '../assets/Abayudaya Logo.png';
+import abayudayaSchool from '../assets/Abayudaya School pic.avif';
+import abayudayaSchool1 from '../assets/Abayudaya school pic1.avif';
+import abayudayaLearning from '../assets/Abayudaya Learning.avif';
+import abayudayaCommunity from '../assets/Abayudaya Community.avif';
+import abayudaya5 from '../assets/abayudaya5.avif';
+import abayudaya6 from '../assets/abayudaya 6.avif';
 // import { useState, useEffect } from 'react';
 
 const Donate = () => {
@@ -21,42 +28,140 @@ const Donate = () => {
 
     return (
         <Container className='donate-container' size="xl" style={{ 
-            paddingLeft: '1rem', 
-            paddingRight: '1rem', 
             paddingTop: '100px', 
             paddingBottom: '4rem', 
             minWidth: '100vw', 
-            background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%)' 
+            background: 'white'
         }}>
             {/* Hero Section */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                style={{ textAlign: 'center', marginBottom: '3rem' }}
+                style={{ textAlign: 'center', marginBottom: '4rem' }}
             >
-                <Title size="3rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
-                    Donate to Keep Jewish Education Alive
+                <Group justify="center" mb="lg">
+                    <Image 
+                        src={abayudayaLogo} 
+                        alt="Abayudaya Logo" 
+                        style={{ width: '80px', height: '80px' }}
+                    />
+                </Group>
+                <Title size="3.5rem" mb="md" style={{ color: '#1e3c72', fontWeight: 800, fontFamily: 'Georgia, serif' }}>
+                    Support Jewish Education in Uganda
                 </Title>
-                <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#666' }}>
+                <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#495057', lineHeight: 1.6 }}>
                     Your generous support directly impacts the lives of Jewish students in Uganda, ensuring their access to quality education and the preservation of their cultural heritage.
                 </Text>
+            </motion.div>
+
+            {/* Impact Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{ marginBottom: '4rem' }}
+            >
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
+                    Your Impact
+                </Title>
+                <Grid gutter="xl" align="center">
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: '#f8f9fa', border: '2px solid #e9ecef', height: '100%' }}>
+                            <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
+                                Schools We Support
+                            </Title>
+                            <Stack gap="lg">
+                                <Box>
+                                    <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Hadassah Primary School</Text>
+                                    <Text style={{ color: '#495057', lineHeight: 1.6 }}>
+                                        Providing foundational education to young Jewish students, combining secular subjects with Jewish studies and traditions.
+                                    </Text>
+                                </Box>
+                                <Box>
+                                    <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Semei Kakungulu High School</Text>
+                                    <Text style={{ color: '#495057', lineHeight: 1.6 }}>
+                                        Offering comprehensive secondary education that prepares students for higher education while maintaining their Jewish identity.
+                                    </Text>
+                                </Box>
+                                <Group gap="lg">
+                                    <Box style={{ textAlign: 'center' }}>
+                                        <Text size="2rem" fw={700} style={{ color: '#1e3c72' }}>500+</Text>
+                                        <Text size="sm" c="dimmed">Students</Text>
+                                    </Box>
+                                    <Box style={{ textAlign: 'center' }}>
+                                        <Text size="2rem" fw={700} style={{ color: '#1e3c72' }}>2</Text>
+                                        <Text size="sm" c="dimmed">Schools</Text>
+                                    </Box>
+                                    <Box style={{ textAlign: 'center' }}>
+                                        <Text size="2rem" fw={700} style={{ color: '#1e3c72' }}>100+</Text>
+                                        <Text size="sm" c="dimmed">Years</Text>
+                                    </Box>
+                                </Group>
+                            </Stack>
+                        </Card>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Grid gutter="md">
+                            <Grid.Col span={6}>
+                                <Image 
+                                    src={abayudayaSchool} 
+                                    alt="Hadassah Primary School" 
+                                    style={{ 
+                                        width: '100%', 
+                                        height: '200px', 
+                                        objectFit: 'cover',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                                    }}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <Image 
+                                    src={abayudayaSchool1} 
+                                    alt="Semei Kakungulu High School" 
+                                    style={{ 
+                                        width: '100%', 
+                                        height: '200px', 
+                                        objectFit: 'cover',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                                    }}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Image 
+                                    src={abayudayaLearning} 
+                                    alt="Students Learning" 
+                                    style={{ 
+                                        width: '100%', 
+                                        height: '200px', 
+                                        objectFit: 'contain',
+                                        objectPosition: 'center',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+                                        backgroundColor: '#f8f9fa'
+                                    }}
+                                />
+                            </Grid.Col>
+                        </Grid>
+                    </Grid.Col>
+                </Grid>
             </motion.div>
 
             {/* Donation Form Container */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
             >
-                <Card shadow="lg" padding="xl" radius="md" style={{ 
+                <Card shadow="lg" padding="xl" radius="lg" style={{ 
                     backgroundColor: 'white',
-                    minHeight: '300px',
-                    position: 'relative',
+                    border: '2px solid #e9ecef',
                     maxWidth: '1200px',
                     margin: '0 auto'
                 }}>
-                <Title order={2} mb="xl" style={{ color: '#1e3c72', textAlign: 'center' }}>Donate via credit/debit card</Title>
+                <Title order={2} mb="xl" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>Donate via credit/debit card</Title>
                     
                     {/* Custom Donation Card */}
                     <motion.div
@@ -71,25 +176,12 @@ const Donate = () => {
                             radius="lg" 
                             style={{ 
                                 background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-                                border: '2px solid #e1e5e9',
+                                border: '2px solid #e9ecef',
                                 transition: 'all 0.3s ease',
                                 position: 'relative',
                                 overflow: 'hidden'
                             }}
                         >
-                            {/* Background Pattern */}
-                            <div style={{
-                                position: 'absolute',
-                                top: 0,
-                                right: 0,
-                                width: '150px',
-                                height: '150px',
-                                background: 'linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(74, 144, 226, 0.05) 100%)',
-                                borderRadius: '50%',
-                                transform: 'translate(50px, -50px)',
-                                zIndex: 0
-                            }} />
-                            
                             <div style={{ position: 'relative', zIndex: 1 }}>
                                 <Group justify="space-between" align="center" mb="lg">
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -104,7 +196,7 @@ const Donate = () => {
                                             }} 
                                         />
                                         <div>
-                                            <Title order={3} style={{ color: '#1e3c72', margin: 0 }}>
+                                            <Title order={3} style={{ color: '#1e3c72', margin: 0, fontWeight: 600 }}>
                                                 Secure Online Donation
                                             </Title>
                                             <Text size="sm" c="dimmed" style={{ margin: 0 }}>
@@ -120,15 +212,15 @@ const Donate = () => {
                                 <Group gap="xl" wrap="wrap">
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                         <IconCreditCard size={20} style={{ color: '#1e3c72' }} />
-                                        <Text size="sm" fw={500}>Credit/Debit Cards Accepted</Text>
+                                        <Text size="sm" fw={500} style={{ color: '#495057' }}>Credit/Debit Cards Accepted</Text>
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                         <IconShieldCheck size={20} style={{ color: '#1e3c72' }} />
-                                        <Text size="sm" fw={500}>SSL Secured</Text>
+                                        <Text size="sm" fw={500} style={{ color: '#495057' }}>SSL Secured</Text>
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                         <IconHeart size={20} style={{ color: '#1e3c72' }} />
-                                        <Text size="sm" fw={500}>Tax Deductible</Text>
+                                        <Text size="sm" fw={500} style={{ color: '#495057' }}>Tax Deductible</Text>
                                     </div>
                                 </Group>
                                 
@@ -145,148 +237,204 @@ const Donate = () => {
                 </Card>
             </motion.div>
 
+            {/* Community Gallery Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                style={{ marginTop: '4rem', marginBottom: '4rem' }}
+            >
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
+                    Community Impact
+                </Title>
+                <Grid gutter="md">
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                        <Image 
+                            src={abayudayaCommunity} 
+                            alt="Community Life" 
+                            style={{ 
+                                width: '100%', 
+                                height: '250px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                        <Image 
+                            src={abayudaya5} 
+                            alt="Students Learning" 
+                            style={{ 
+                                width: '100%', 
+                                height: '250px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                        <Image 
+                            src={abayudaya6} 
+                            alt="Educational Programs" 
+                            style={{ 
+                                width: '100%', 
+                                height: '250px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                </Grid>
+            </motion.div>
+
             {/* Additional Information */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                style={{ marginTop: '3rem' }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                style={{ marginBottom: '4rem' }}
             >
-                <Group justify="center" gap="lg" wrap="wrap">
-                    <Card shadow="sm" padding="lg" radius="md" style={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                        backdropFilter: 'blur(10px)',
-                        minWidth: '250px',
-                        textAlign: 'center'
-                    }}>
-                        <IconShieldCheck size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
-                        <Title order={4} mb="xs" style={{ color: '#1e3c72' }}>
-                            Secure Donations
-                        </Title>
-                        <Text size="sm" c="dimmed">
-                            All donations are processed securely through our trusted partners.
-                        </Text>
-                    </Card>
-
-                    
-                    <Card shadow="sm" padding="lg" radius="md" style={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                        backdropFilter: 'blur(10px)',
-                        minWidth: '250px',
-                        textAlign: 'center'
-                    }}>
-                        <IconHeart size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
-                        <Title order={4} mb="xs" style={{ color: '#1e3c72' }}>
-                            Direct Impact
-                        </Title>
-                        <Text size="sm" c="dimmed">
-                            100% of your donation goes directly to supporting Jewish education in Uganda.
-                        </Text>
-                    </Card>
-                </Group>
+                <Grid gutter="lg">
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Card shadow="lg" padding="lg" radius="lg" style={{ 
+                            backgroundColor: 'white',
+                            border: '2px solid #e9ecef',
+                            textAlign: 'center',
+                            height: '100%'
+                        }}>
+                            <IconShieldCheck size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
+                            <Title order={4} mb="xs" style={{ color: '#1e3c72', fontWeight: 600 }}>
+                                Secure Donations
+                            </Title>
+                            <Text size="sm" style={{ color: '#495057', lineHeight: 1.6 }}>
+                                All donations are processed securely through our trusted partners with SSL encryption and fraud protection.
+                            </Text>
+                        </Card>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Card shadow="lg" padding="lg" radius="lg" style={{ 
+                            backgroundColor: 'white',
+                            border: '2px solid #e9ecef',
+                            textAlign: 'center',
+                            height: '100%'
+                        }}>
+                            <IconHeart size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
+                            <Title order={4} mb="xs" style={{ color: '#1e3c72', fontWeight: 600 }}>
+                                Direct Impact
+                            </Title>
+                            <Text size="sm" style={{ color: '#495057', lineHeight: 1.6 }}>
+                                100% of your donation goes directly to supporting Jewish education in Uganda, with no administrative fees.
+                            </Text>
+                        </Card>
+                    </Grid.Col>
+                </Grid>
             </motion.div>
 
             {/* How to Donate Section */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                style={{ marginTop: '4rem' }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+                style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="xl" style={{ color: '#1e3c72', textAlign: 'center' }}>
+                <Title order={2} mb="xl" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
                     Other Ways to Donate
                 </Title>
                 
                 <Stack gap="xl">
                     {/* Check Donations */}
-                    <Card shadow="sm" padding="xl" radius="md" style={{ backgroundColor: 'white' }}>
-                        <Title order={3} mb="lg" style={{ color: '#1e3c72' }}>
+                    <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef' }}>
+                        <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                             Check Donations
                         </Title>
                         <Stack gap="md">
-                            <Text>
+                            <Text style={{ lineHeight: 1.6, color: '#495057' }}>
                                 <strong>Make checks payable to:</strong> Jewish Community Foundation of Greater Mercer
                             </Text>
-                            <Text>
+                            <Text style={{ lineHeight: 1.6, color: '#495057' }}>
                                 <strong>Important:</strong> Please indicate in a letter sent along with the check or in the check memo line that the monies are to be directed to <strong>The Friends of the Abayudaya Fund</strong> at the Jewish Community Foundation.
                             </Text>
-                            <Card shadow="xs" padding="md" radius="sm" style={{ backgroundColor: '#f8f9fa' }}>
-                                <Text fw={600} mb="xs">Mailing Address:</Text>
-                                <Text>Jewish Community Foundation of Greater Mercer</Text>
-                                <Text>457 Nassau Street, Suite 101</Text>
-                                <Text>Princeton, NJ 08540</Text>
+                            <Card shadow="sm" padding="md" radius="md" style={{ backgroundColor: '#f8f9fa', border: '1px solid #e9ecef' }}>
+                                <Text fw={600} mb="xs" style={{ color: '#1e3c72' }}>Mailing Address:</Text>
+                                <Text style={{ color: '#495057' }}>Jewish Community Foundation of Greater Mercer</Text>
+                                <Text style={{ color: '#495057' }}>457 Nassau Street, Suite 101</Text>
+                                <Text style={{ color: '#495057' }}>Princeton, NJ 08540</Text>
                             </Card>
                         </Stack>
                     </Card>
 
                     {/* Wire Transfer */}
-                    <Card shadow="sm" padding="xl" radius="md" style={{ backgroundColor: 'white' }}>
-                        <Title order={3} mb="lg" style={{ color: '#1e3c72' }}>
+                    <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef' }}>
+                        <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                             Wire Transfer
                         </Title>
                         <Stack gap="md">
-                            <Card shadow="xs" padding="md" radius="sm" style={{ backgroundColor: '#f8f9fa' }}>
-                                <Text fw={600} mb="xs">Wire To:</Text>
-                                <Text>FRB ABA 021001088</Text>
-                                <Text>HSBC Bank USA, New York</Text>
-                                <Text>452 Fifth Avenue</Text>
-                                <Text>New York, NY 10018</Text>
+                            <Card shadow="sm" padding="md" radius="md" style={{ backgroundColor: '#f8f9fa', border: '1px solid #e9ecef' }}>
+                                <Text fw={600} mb="xs" style={{ color: '#1e3c72' }}>Wire To:</Text>
+                                <Text style={{ color: '#495057' }}>FRB ABA 021001088</Text>
+                                <Text style={{ color: '#495057' }}>HSBC Bank USA, New York</Text>
+                                <Text style={{ color: '#495057' }}>452 Fifth Avenue</Text>
+                                <Text style={{ color: '#495057' }}>New York, NY 10018</Text>
                             </Card>
-                            <Card shadow="xs" padding="md" radius="sm" style={{ backgroundColor: '#f8f9fa' }}>
-                                <Text fw={600} mb="xs">For Credit:</Text>
-                                <Text>Account 000112046 (Incoming Wires)</Text>
-                                <Text>In Favor of: VIAS – IIS Operations</Text>
-                                <Text>Plan number: J**PO (Please contact JCFGM at 609-240-9511 for the full plan number)</Text>
-                                <Text>Plan name: Jewish Community Foundation Portfolio Account</Text>
+                            <Card shadow="sm" padding="md" radius="md" style={{ backgroundColor: '#f8f9fa', border: '1px solid #e9ecef' }}>
+                                <Text fw={600} mb="xs" style={{ color: '#1e3c72' }}>For Credit:</Text>
+                                <Text style={{ color: '#495057' }}>Account 000112046 (Incoming Wires)</Text>
+                                <Text style={{ color: '#495057' }}>In Favor of: VIAS – IIS Operations</Text>
+                                <Text style={{ color: '#495057' }}>Plan number: J**PO (Please contact JCFGM at 609-240-9511 for the full plan number)</Text>
+                                <Text style={{ color: '#495057' }}>Plan name: Jewish Community Foundation Portfolio Account</Text>
                             </Card>
-                            <Alert variant="light" color="blue" title="Important Notice">
+                            <Alert variant="light" color="blue" title="Important Notice" style={{ border: '1px solid #e9ecef' }}>
                                 Please notify JCFGM at <strong>info@foundationjewish.org</strong> or <strong>609-240-9511</strong> about a forthcoming wire, and its designation to the Friends of the Abayudaya Fund.
                             </Alert>
                         </Stack>
                     </Card>
 
                     {/* Securities Transfer */}
-                    <Card shadow="sm" padding="xl" radius="md" style={{ backgroundColor: 'white' }}>
-                        <Title order={3} mb="lg" style={{ color: '#1e3c72' }}>
+                    <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef' }}>
+                        <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                             Transfer of Securities
                         </Title>
                         <Stack gap="md">
-                            <Card shadow="xs" padding="md" radius="sm" style={{ backgroundColor: '#f8f9fa' }}>
-                                <Text fw={600} mb="xs">Vanguard Brokerage Services (1-800-992-8327)</Text>
-                                <Text>DTC number: 0062</Text>
-                                <Text>Name of Account: Jewish Community Foundation of Greater Mercer</Text>
-                                <Text>Account number: 45433463</Text>
+                            <Card shadow="sm" padding="md" radius="md" style={{ backgroundColor: '#f8f9fa', border: '1px solid #e9ecef' }}>
+                                <Text fw={600} mb="xs" style={{ color: '#1e3c72' }}>Vanguard Brokerage Services (1-800-992-8327)</Text>
+                                <Text style={{ color: '#495057' }}>DTC number: 0062</Text>
+                                <Text style={{ color: '#495057' }}>Name of Account: Jewish Community Foundation of Greater Mercer</Text>
+                                <Text style={{ color: '#495057' }}>Account number: 45433463</Text>
                             </Card>
-                            <Alert variant="light" color="blue" title="Important Notice">
+                            <Alert variant="light" color="blue" title="Important Notice" style={{ border: '1px solid #e9ecef' }}>
                                 Please notify JCFGM of your intent to donate securities. Because of privacy practices at brokerage firms, Vanguard is not able to identify the name of the individual making the transaction. Please contact <strong>info@foundationjewish.org</strong> or call <strong>609-240-9511</strong>. At that time, you can inform the Foundation staff that the stock transfer is for the Friends of the Abayudaya Fund.
                             </Alert>
                         </Stack>
                     </Card>
 
                     {/* Employer Matching */}
-                    <Card shadow="sm" padding="xl" radius="md" style={{ backgroundColor: 'white' }}>
-                        <Title order={3} mb="lg" style={{ color: '#1e3c72' }}>
+                    <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef' }}>
+                        <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                             Employer/Workplace Matching Gift Information
                         </Title>
                         <Stack gap="md">
-                            <Text>
+                            <Text style={{ lineHeight: 1.6, color: '#495057' }}>
                                 It is important to notify the Foundation staff of your intent to make a workplace/employer matching gift. If needed, the Jewish Community Foundation of Greater Mercer's Tax ID number is <strong>23-7174039</strong>.
                             </Text>
-                            <Card shadow="xs" padding="md" radius="sm" style={{ backgroundColor: '#f8f9fa' }}>
-                                <Text fw={600} mb="xs">Mailing Address:</Text>
-                                <Text>Jewish Community Foundation of Greater Mercer</Text>
-                                <Text>457 Nassau Street, Suite 101</Text>
-                                <Text>Princeton, NJ 08540</Text>
+                            <Card shadow="sm" padding="md" radius="md" style={{ backgroundColor: '#f8f9fa', border: '1px solid #e9ecef' }}>
+                                <Text fw={600} mb="xs" style={{ color: '#1e3c72' }}>Mailing Address:</Text>
+                                <Text style={{ color: '#495057' }}>Jewish Community Foundation of Greater Mercer</Text>
+                                <Text style={{ color: '#495057' }}>457 Nassau Street, Suite 101</Text>
+                                <Text style={{ color: '#495057' }}>Princeton, NJ 08540</Text>
                             </Card>
                         </Stack>
                     </Card>
 
                     {/* Contact Information */}
-                    <Card shadow="sm" padding="xl" radius="md" style={{ 
+                    <Card shadow="lg" padding="xl" radius="lg" style={{ 
                         background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%)',
-                        color: 'white'
+                        color: 'white',
+                        border: 'none'
                     }}>
-                        <Title order={3} mb="lg" style={{ color: 'white', textAlign: 'center' }}>
+                        <Title order={3} mb="lg" style={{ color: 'white', textAlign: 'center', fontWeight: 600 }}>
                             Contact Information
                         </Title>
                         <Group gap="xl" wrap="wrap" justify="center">
@@ -307,25 +455,6 @@ const Donate = () => {
                     </Card>
                 </Stack>
             </motion.div>
-
-            <style jsx>{`
-                .donate-container {
-                    padding-left: 1rem !important;
-                    padding-right: 1rem !important;
-                }
-
-                @media (min-width: 768px) {
-                    .donate-container {
-                        padding-left: 20rem !important;
-                        padding-right: 20rem !important;
-                    }
-                }
-
-                @keyframes spin {
-                    0% { transform: translate(-50%, -50%) rotate(0deg); }
-                    100% { transform: translate(-50%, -50%) rotate(360deg); }
-                }
-            `}</style>
         </Container>
     );
 };

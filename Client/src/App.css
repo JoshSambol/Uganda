@@ -1,4 +1,41 @@
 #root {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* App-specific styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional loading states */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Error states */
+.error {
+  color: #dc3545;
   text-align: center;
+  padding: 2rem;
+}
+
+/* Success states */
+.success {
+  color: #28a745;
+  text-align: center;
+  padding: 2rem;
 }
