@@ -113,7 +113,7 @@ const Schools = () => {
                 style={{ marginBottom: '4rem' }}
             >
                 <Card shadow="lg" padding="xl" radius="lg" style={{ 
-                    background: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+                    background: 'linear-gradient(135deg,rgb(199, 99, 109) 0%,rgb(193, 82, 93) 100%)',
                     color: 'white',
                     border: 'none'
                 }}>
@@ -208,7 +208,7 @@ const Schools = () => {
                 style={{ marginBottom: '4rem' }}
             >
                 <Card shadow="lg" padding="xl" radius="lg" style={{ 
-                    background: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+                    background: 'linear-gradient(135deg,rgb(199, 99, 109) 0%,rgb(193, 82, 93) 100%)',
                     color: 'white',
                     border: 'none'
                 }}>
@@ -239,25 +239,19 @@ const Schools = () => {
                 </Title>
                 
                 <Grid gutter="lg">
-                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                         <Card shadow="lg" padding="lg" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef', textAlign: 'center' }}>
-                            <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>417</Text>
+                            <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>410+</Text>
                             <Text size="sm" c="dimmed">Current Students</Text>
                         </Card>
                     </Grid.Col>
-                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                         <Card shadow="lg" padding="lg" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef', textAlign: 'center' }}>
-                            <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>22</Text>
+                            <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>22+</Text>
                             <Text size="sm" c="dimmed">Teachers</Text>
                         </Card>
                     </Grid.Col>
-                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-                        <Card shadow="lg" padding="lg" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef', textAlign: 'center' }}>
-                            <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>253</Text>
-                            <Text size="sm" c="dimmed">Graduates to High School</Text>
-                        </Card>
-                    </Grid.Col>
-                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                         <Card shadow="lg" padding="lg" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef', textAlign: 'center' }}>
                             <Text size="3rem" fw={700} style={{ color: '#1e3c72' }}>2001</Text>
                             <Text size="sm" c="dimmed">Founded</Text>
@@ -349,13 +343,13 @@ const Schools = () => {
                     <Title order={3} mb="lg" style={{ color: 'white', fontWeight: 600, textAlign: 'center' }}>
                         Furniture Fundraiser
                     </Title>
-                    <Text size="lg" mb="lg" style={{ lineHeight: 1.6, textAlign: 'center' }}>
+                    <Text size="lg" mb="lg" style={{ color: 'white', lineHeight: 1.6, textAlign: 'center' }}>
                         Hadassah Primary School is in need of basic furniture to ensure the students' continued success.
                     </Text>
-                    <Text mb="lg" style={{ lineHeight: 1.6, textAlign: 'center' }}>
+                    <Text mb="lg" style={{ color: 'white', lineHeight: 1.6, textAlign: 'center' }}>
                         The new furniture will provide a better learning environment for the children since there will be adequate seating in all classrooms as well as beds in the dormitories. This will also translate to better health of the students due to more personal space.
                     </Text>
-                    <Text size="xl" fw={700} style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <Text size="xl" fw={700} style={{ color: 'white', textAlign: 'center', marginBottom: '2rem' }}>
                         Cost: $13,000+ for classroom furniture and dormitory beds
                     </Text>
                     <Group justify="center">
