@@ -6,7 +6,6 @@ import jcfgmLogo from '../assets/JCFGM logo.png';
 import abayudayaLogo from '../assets/Abayudaya Logo.png';
 import abayudayaSchool from '../assets/Abayudaya School pic.avif';
 import abayudayaSchool1 from '../assets/Abayudaya school pic1.avif';
-import abayudayaLearning from '../assets/Abayudaya Learning.avif';
 import abayudayaCommunity from '../assets/Abayudaya Community.avif';
 import abayudaya5 from '../assets/abayudaya5.avif';
 import abayudaya6 from '../assets/abayudaya 6.avif';
@@ -131,16 +130,15 @@ const Donate = () => {
                             </Grid.Col>
                             <Grid.Col span={12}>
                                 <Image 
-                                    src={abayudayaLearning} 
+                                    src={abayudayaCommunity} 
                                     alt="Students Learning" 
                                     style={{ 
                                         width: '100%', 
                                         height: '200px', 
-                                        objectFit: 'contain',
+                                        objectFit: 'cover',
                                         objectPosition: 'center',
                                         borderRadius: '12px',
-                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
-                                        backgroundColor: '#f8f9fa'
+                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
                                     }}
                                 />
                             </Grid.Col>
@@ -437,19 +435,19 @@ const Donate = () => {
                         <Title order={3} mb="lg" style={{ color: 'white', textAlign: 'center', fontWeight: 600 }}>
                             Contact Information
                         </Title>
-                        <Group gap="xl" wrap="wrap" justify="center">
-                            <div style={{ textAlign: 'center' }}>
-                                <Text fw={600} mb="xs">Phone:</Text>
-                                <Text>609-240-9511</Text>
+                        <Group color="white" gap="xl" wrap="wrap" justify="center">
+                            <div style={{ color: 'white', textAlign: 'center' }}>
+                                <Text color="white" fw={600} mb="xs">Phone:</Text>
+                                <Text color="white">609-240-9511</Text>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <Text fw={600} mb="xs">Email:</Text>
-                                <Text>info@foundationjewish.org</Text>
+                            <div style={{ color: 'white', textAlign: 'center' }}>
+                                <Text color="white" fw={600} mb="xs">Email:</Text>
+                                <Text color="white">info@foundationjewish.org</Text>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <Text fw={600} mb="xs">Address:</Text>
-                                <Text>457 Nassau Street, Suite 101</Text>
-                                <Text>Princeton, NJ 08540</Text>
+                            <div style={{ color: 'white', textAlign: 'center' }}>
+                                <Text color="white" fw={600} mb="xs">Address:</Text>
+                                <Text color="white">457 Nassau Street, Suite 101</Text>
+                                <Text color="white">Princeton, NJ 08540</Text>
                             </div>
                         </Group>
                     </Card>

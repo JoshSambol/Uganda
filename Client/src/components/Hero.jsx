@@ -211,13 +211,13 @@ function Hero() {
                       src={abayudayaLearning} 
                       alt="Abayudaya Learning" 
                       style={{ 
-                        width: '100%', 
+                        width: 'scaledtofit', 
                         height: '120px', 
                         objectFit: 'contain',
                         objectPosition: 'center',
                         borderRadius: '8px',
                         boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                        backgroundColor: '#f8f9fa'
+                        backgroundColor: 'transparent'
                       }}
                     />
                   </Grid.Col>

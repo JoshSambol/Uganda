@@ -9,11 +9,13 @@ import Contact from './pages/Contact'
 import Schools from './pages/Schools'
 import Gallery from './pages/Gallery'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 function App() {
 
   return (
     <>
       <Router>
+        <ScrollToTop />
         <div style={{ position: 'relative' }}>
           <Nav />
           <div style={{ marginTop: '60px' }}>

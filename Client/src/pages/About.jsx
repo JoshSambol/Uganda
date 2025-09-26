@@ -5,12 +5,12 @@ import { IconHeart, IconUsers, IconSchool, IconGlobe, IconHeartHandshake, IconSt
 import abayudayaLogo from '../assets/Abayudaya Logo.png';
 import abayudayaCommunity from '../assets/Abayudaya Community.avif';
 import abayudayaIdentity from '../assets/Abayudaya Identity.avif';
-import abayudayaLearning from '../assets/Abayudaya Learning.avif';
 import abayudayaSchool from '../assets/Abayudaya School pic.avif';
 import abayudayaSchool1 from '../assets/Abayudaya school pic1.avif';
 import abayudayaTemple from '../assets/Abayudaya Temple.avif';
 import abayudaya7 from '../assets/abayudaya7.avif';
 import abayudaya8 from '../assets/abayudaya8.avif';
+import abayudaya5 from '../assets/abayudaya5.avif';
 
 const About = () => {
     const navigate = useNavigate();
@@ -179,10 +179,10 @@ const About = () => {
                             <Title order={2} mb="lg" style={{ color: 'white', fontWeight: 700 }}>
                                 Educational Crisis
                             </Title>
-                            <Text size="lg" mb="md" style={{ lineHeight: 1.6 }}>
+                            <Text color="white" size="lg" mb="md" style={{ lineHeight: 1.6 }}>
                                 <strong>Hadassah Primary School and Semei Kakungulu High School urgently require sustainable funding to remain open.</strong>
                             </Text>
-                            <Text mb="lg" style={{ lineHeight: 1.6 }}>
+                            <Text color="white" mb="lg" style={{ lineHeight: 1.6 }}>
                                 These schools are crucial for sustaining the community's Jewish traditions and education. They provide comprehensive 
                                 education in both secular and Jewish subjects, open to students of all faiths, fostering mutual respect and tolerance.
                             </Text>
@@ -232,16 +232,15 @@ const About = () => {
                             </Grid.Col>
                             <Grid.Col span={12}>
                                 <Image 
-                                    src={abayudayaLearning} 
+                                    src={abayudayaCommunity} 
                                     alt="Students Learning" 
                                     style={{ 
                                         width: '100%', 
                                         height: '200px', 
-                                        objectFit: 'contain',
+                                        objectFit: 'cover',
                                         objectPosition: 'center',
                                         borderRadius: '12px',
-                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
-                                        backgroundColor: '#f8f9fa'
+                                        boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
                                     }}
                                 />
                             </Grid.Col>
@@ -323,16 +322,15 @@ const About = () => {
                     </Grid.Col>
                     <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                         <Image 
-                            src={abayudayaLearning} 
+                            src={abayudaya5} 
                             alt="Learning Together" 
                             style={{ 
                                 width: '100%', 
                                 height: '250px', 
-                                objectFit: 'contain',
+                                objectFit: 'cover',
                                 objectPosition: 'center',
                                 borderRadius: '12px',
-                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
-                                backgroundColor: '#f8f9fa'
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
                             }}
                         />
                     </Grid.Col>
