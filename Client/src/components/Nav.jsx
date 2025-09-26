@@ -13,6 +13,7 @@ const Nav = () => {
     const navItems = [
         { label: 'Home', path: '/' },
         { label: 'About', path: '/about' },
+        { label: 'Schools', path: '/schools' },
         { label: 'Donate', path: '/donate' },
         { label: 'Contact', path: '/contact' }
     ];

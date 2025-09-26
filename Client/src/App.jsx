@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import About from './pages/About'
 import Donate from './pages/Donate'
 import Contact from './pages/Contact'
+import Schools from './pages/Schools'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/about" element={<About />} />
+              <Route path="/schools" element={<Schools />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

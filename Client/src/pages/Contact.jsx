@@ -22,6 +22,21 @@ import abayudaya8 from '../assets/abayudaya8.avif';
 const Contact = () => {
     const navigate = useNavigate();
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        const mailtoLink = `mailto:info@foundationjewish.org?subject=${encodeURIComponent(subject || 'Contact from Friends of the Abayudaya Website')}&body=${encodeURIComponent(
+            `Name: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message provided'}`
+        )}`;
+        
+        window.location.href = mailtoLink;
+    };
+
     const faqData = [
         {
             value: 'faq1',
@@ -134,54 +149,61 @@ const Contact = () => {
                             <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                                 Send us a Message
                             </Title>
-                            <Stack gap="md">
-                                <TextInput
-                                    placeholder="Your Name"
-                                    label="Name"
-                                    required
-                                    styles={{ 
-                                        input: { borderColor: '#1e3c72' },
-                                        label: { color: '#1e3c72', fontWeight: 600 }
-                                    }}
-                                />
-                                <TextInput
-                                    placeholder="your.email@example.com"
-                                    label="Email"
-                                    type="email"
-                                    required
-                                    styles={{ 
-                                        input: { borderColor: '#1e3c72' },
-                                        label: { color: '#1e3c72', fontWeight: 600 }
-                                    }}
-                                />
-                                <TextInput
-                                    placeholder="Subject"
-                                    label="Subject"
-                                    required
-                                    styles={{ 
-                                        input: { borderColor: '#1e3c72' },
-                                        label: { color: '#1e3c72', fontWeight: 600 }
-                                    }}
-                                />
-                                <Textarea
-                                    placeholder="Tell us how we can help you..."
-                                    label="Message"
-                                    rows={4}
-                                    required
-                                    styles={{ 
-                                        input: { borderColor: '#1e3c72' },
-                                        label: { color: '#1e3c72', fontWeight: 600 }
-                                    }}
-                                />
-                                <Button 
-                                    size="lg" 
-                                    variant="filled" 
-                                    style={{ backgroundColor: '#1e3c72', border: 'none', fontWeight: 600 }}
-                                    leftSection={<IconMessageCircle size={20} />}
-                                >
-                                    Send Message
-                                </Button>
-                            </Stack>
+                            <form onSubmit={handleSubmit}>
+                                <Stack gap="md">
+                                    <TextInput
+                                        name="name"
+                                        placeholder="Your Name"
+                                        label="Name"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <TextInput
+                                        name="email"
+                                        placeholder="your.email@example.com"
+                                        label="Email"
+                                        type="email"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <TextInput
+                                        name="subject"
+                                        placeholder="Subject"
+                                        label="Subject"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <Textarea
+                                        name="message"
+                                        placeholder="Tell us how we can help you..."
+                                        label="Message"
+                                        rows={4}
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <Button 
+                                        type="submit"
+                                        size="lg" 
+                                        variant="filled" 
+                                        style={{ backgroundColor: '#1e3c72', border: 'none', fontWeight: 600 }}
+                                        leftSection={<IconMessageCircle size={20} />}
+                                    >
+                                        Send Message
+                                    </Button>
+                                </Stack>
+                            </form>
                         </Card>
                     </Grid.Col>
                 </Grid>
