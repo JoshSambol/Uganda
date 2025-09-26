@@ -1,59 +1,96 @@
 import { Container, Title, Text, Button, Group, Stack, Card, Badge, Divider, TextInput, Textarea, Accordion, Image, Grid, Box } from '@mantine/core';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { IconMail, IconPhone, IconMapPin, IconClock, IconHeart, IconUsers, IconSchool, IconGlobe, IconMessageCircle, IconQuestionMark } from '@tabler/icons-react';
+import { IconMail, IconPhone, IconMapPin, IconClock, IconHeart, IconUsers, IconSchool, IconGlobe, IconMessageCircle, IconQuestionMark, IconStar } from '@tabler/icons-react';
+import abayudayaLogo from '../assets/Abayudaya Logo.png';
+import abayudayaCommunity from '../assets/Abayudaya Community.avif';
+import abayudayaIdentity from '../assets/Abayudaya Identity.avif';
+import abayudayaLearning from '../assets/Abayudaya Learning.avif';
+import abayudayaSchool from '../assets/Abayudaya School pic.avif';
+import abayudayaSchool1 from '../assets/Abayudaya school pic1.avif';
+import abayudayaTemple from '../assets/Abayudaya Temple.avif';
+import abayudaya1 from '../assets/Abayudaya1.avif';
+import abayudaya2 from '../assets/abayudaya2.avif';
+import abayudaya3 from '../assets/abayudaya3.avif';
+import abayudaya4 from '../assets/abayudaya4.avif';
+import abayudaya5 from '../assets/abayudaya5.avif';
+import abayudaya6 from '../assets/abayudaya 6.avif';
+import abayudaya7 from '../assets/abayudaya7.avif';
+import abayudaya8 from '../assets/abayudaya8.avif';
 
 
 const Contact = () => {
     const navigate = useNavigate();
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        const mailtoLink = `mailto:info@foundationjewish.org?subject=${encodeURIComponent(subject || 'Contact from Friends of the Abayudaya Website')}&body=${encodeURIComponent(
+            `Name: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message provided'}`
+        )}`;
+        
+        window.location.href = mailtoLink;
+    };
+
     const faqData = [
         {
             value: 'faq1',
-            label: '',
-            content: ''
+            label: 'How can I make a donation?',
+            content: 'You can donate online through our secure donation portal, send a check to our mailing address, or contact us for wire transfer information. All donations are tax-deductible and go directly to supporting Jewish education in Uganda.'
         },
         {
             value: 'faq2',
-            label: '',
-            content: ''
+            label: 'Where does my donation go?',
+            content: '100% of your donation goes directly to supporting Hadassah Primary School and Semei Kakungulu High School in Uganda. These funds help maintain facilities, provide educational materials, and support teachers and students.'
         },
         {
             value: 'faq3',
-            label: '',
-            content: ''
+            label: 'Is my donation tax-deductible?',
+            content: 'Yes, all donations to the Friends of the Abayudaya Fund are tax-deductible. The Jewish Community Foundation of Greater Mercer is a 501(c)(3) organization, and you will receive a receipt for your donation.'
         },
         {
             value: 'faq4',
-            label: '',
-            content: ''
+            label: 'Can I visit the schools in Uganda?',
+            content: 'Yes! We encourage supporters to visit and see the impact of their donations firsthand. Please contact us to arrange a visit and learn more about the community and educational programs.'
         },
         {
             value: 'faq5',
-            label: '',
-            content: ''
+            label: 'How can I get involved beyond donating?',
+            content: 'There are many ways to get involved: volunteer your time, help spread awareness about our mission, organize fundraising events, or connect us with other potential supporters. Contact us to discuss opportunities.'
         },
         {
             value: 'faq6',
-            label: '',
-            content: ''
+            label: 'What is the history of the Abayudaya community?',
+            content: 'The Abayudaya community was founded in 1919 by Semei Kakungulu, who was inspired by the Hebrew Bible. Despite facing persecution under Idi Amin\'s regime, the community has maintained its Jewish identity and traditions for over 100 years.'
         }
     ];
 
     return (
-        <Container className='contact-container' size="lg" style={{ paddingLeft: '20rem', paddingRight: '20rem', paddingTop: '100px', paddingBottom: '4rem', minWidth: '100vw', background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #06FFA5 75%, #00D4FF 100%)' }}>
+        <Container className='contact-container' size="xl" style={{ paddingTop: '100px', paddingBottom: '4rem', minWidth: '100vw', background: 'white' }}>
             
-            {/* Hero Section with Abayudaya Pictures */}
+            {/* Hero Section */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 style={{ textAlign: 'center', marginBottom: '4rem' }}
             >
-                <Title size="3.5rem" mb="md" style={{ color: '#1e3c72', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
+                <Group justify="center" mb="lg">
+                    <Image 
+                        src={abayudayaLogo} 
+                        alt="Abayudaya Logo" 
+                        style={{ width: '80px', height: '80px' }}
+                    />
+                </Group>
+                <Title size="3.5rem" mb="md" style={{ color: '#1e3c72', fontWeight: 800, fontFamily: 'Georgia, serif' }}>
                     Get in Touch
                 </Title>
-                <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#1e3c72', fontWeight: 600, textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+                <Text size="xl" style={{ maxWidth: '800px', margin: '0 auto', color: '#495057', lineHeight: 1.6 }}>
                     Connect with us to learn more about supporting the vibrant Jewish community of Uganda
                 </Text>
             </motion.div>
@@ -64,43 +101,43 @@ const Contact = () => {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
                     How to Reach Us
                 </Title>
                 
-                <Grid gutter="lg">
+                <Grid gutter="xl">
                     <Grid.Col span={{ base: 12, md: 6 }}>
-                        <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '3px solid #00D4FF', height: '100%' }}>
+                        <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: '#f8f9fa', border: '2px solid #e9ecef', height: '100%' }}>
                             <Stack gap="lg">
                                 <Group>
-                                    <IconMail size={30} style={{ color: '#FF6B35' }} />
+                                    <IconMail size={30} style={{ color: '#1e3c72' }} />
                                     <Box>
                                         <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Email</Text>
-                                        <Text>info@foundationjewish.org</Text>
+                                        <Text style={{ color: '#495057' }}>info@foundationjewish.org</Text>
                                     </Box>
                                 </Group>
                                 <Group>
-                                    <IconPhone size={30} style={{ color: '#F7931E' }} />
+                                    <IconPhone size={30} style={{ color: '#1e3c72' }} />
                                     <Box>
                                         <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Phone</Text>
-                                        <Text>609-240-9511</Text>
+                                        <Text style={{ color: '#495057' }}>609-240-9511</Text>
                                     </Box>
                                 </Group>
                                 <Group>
-                                    <IconMapPin size={30} style={{ color: '#06FFA5' }} />
+                                    <IconMapPin size={30} style={{ color: '#1e3c72' }} />
                                     <Box>
                                         <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Address</Text>
-                                        <Text>457 Nassau Street, Suite 101, Princeton, NJ 08540</Text>
+                                        <Text style={{ color: '#495057' }}>457 Nassau Street, Suite 101, Princeton, NJ 08540</Text>
                                     </Box>
                                 </Group>
                                 <Group>
-                                    <IconClock size={30} style={{ color: '#00D4FF' }} />
+                                    <IconClock size={30} style={{ color: '#1e3c72' }} />
                                     <Box>
                                         <Text fw={600} size="lg" style={{ color: '#1e3c72' }}>Office Hours</Text>
-                                        <Text>Monday - Friday: 9:00 AM - 5:00 PM EST</Text>
+                                        <Text style={{ color: '#495057' }}>Monday - Friday: 9:00 AM - 5:00 PM EST</Text>
                                     </Box>
                                 </Group>
                             </Stack>
@@ -108,46 +145,65 @@ const Contact = () => {
                     </Grid.Col>
                     
                     <Grid.Col span={{ base: 12, md: 6 }}>
-                        <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '3px solid #FFD23F', height: '100%' }}>
-                            <Title order={3} mb="lg" style={{ color: '#1e3c72' }}>
+                        <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef', height: '100%' }}>
+                            <Title order={3} mb="lg" style={{ color: '#1e3c72', fontWeight: 600 }}>
                                 Send us a Message
                             </Title>
-                            <Stack gap="md">
-                                <TextInput
-                                    placeholder="Your Name"
-                                    label="Name"
-                                    required
-                                    styles={{ input: { borderColor: '#FF6B35' } }}
-                                />
-                                <TextInput
-                                    placeholder="your.email@example.com"
-                                    label="Email"
-                                    type="email"
-                                    required
-                                    styles={{ input: { borderColor: '#F7931E' } }}
-                                />
-                                <TextInput
-                                    placeholder="Subject"
-                                    label="Subject"
-                                    required
-                                    styles={{ input: { borderColor: '#06FFA5' } }}
-                                />
-                                <Textarea
-                                    placeholder="Tell us how we can help you..."
-                                    label="Message"
-                                    rows={4}
-                                    required
-                                    styles={{ input: { borderColor: '#00D4FF' } }}
-                                />
-                                <Button 
-                                    size="lg" 
-                                    variant="filled" 
-                                    style={{ backgroundColor: '#FF6B35', border: 'none' }}
-                                    leftSection={<IconMessageCircle size={20} />}
-                                >
-                                    Send Message
-                                </Button>
-                            </Stack>
+                            <form onSubmit={handleSubmit}>
+                                <Stack gap="md">
+                                    <TextInput
+                                        name="name"
+                                        placeholder="Your Name"
+                                        label="Name"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <TextInput
+                                        name="email"
+                                        placeholder="your.email@example.com"
+                                        label="Email"
+                                        type="email"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <TextInput
+                                        name="subject"
+                                        placeholder="Subject"
+                                        label="Subject"
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <Textarea
+                                        name="message"
+                                        placeholder="Tell us how we can help you..."
+                                        label="Message"
+                                        rows={4}
+                                        required
+                                        styles={{ 
+                                            input: { borderColor: '#1e3c72' },
+                                            label: { color: '#1e3c72', fontWeight: 600 }
+                                        }}
+                                    />
+                                    <Button 
+                                        type="submit"
+                                        size="lg" 
+                                        variant="filled" 
+                                        style={{ backgroundColor: '#1e3c72', border: 'none', fontWeight: 600 }}
+                                        leftSection={<IconMessageCircle size={20} />}
+                                    >
+                                        Send Message
+                                    </Button>
+                                </Stack>
+                            </form>
                         </Card>
                     </Grid.Col>
                 </Grid>
@@ -157,34 +213,34 @@ const Contact = () => {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
                     Frequently Asked Questions
                 </Title>
                 
-                <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '3px solid #FF6B35' }}>
+                <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'white', border: '2px solid #e9ecef' }}>
                     <Accordion variant="separated" radius="md">
                         {faqData.map((item) => (
                             <Accordion.Item key={item.value} value={item.value}>
                                 <Accordion.Control 
                                     style={{ 
-                                        backgroundColor: 'rgba(255,107,53,0.1)', 
-                                        border: '2px solid #FF6B35',
+                                        backgroundColor: '#f8f9fa', 
+                                        border: '1px solid #e9ecef',
                                         borderRadius: '8px',
                                         marginBottom: '8px'
                                     }}
                                 >
                                     <Group>
-                                        <IconQuestionMark size={20} style={{ color: '#FF6B35' }} />
+                                        <IconQuestionMark size={20} style={{ color: '#1e3c72' }} />
                                         <Text fw={600} style={{ color: '#1e3c72' }}>
                                             {item.label}
                                         </Text>
                                     </Group>
                                 </Accordion.Control>
-                                <Accordion.Panel style={{ padding: '1rem', backgroundColor: 'rgba(255,255,255,0.8)' }}>
-                                    <Text style={{ color: '#1e3c72', lineHeight: 1.6 }}>
+                                <Accordion.Panel style={{ padding: '1rem', backgroundColor: 'white' }}>
+                                    <Text style={{ color: '#495057', lineHeight: 1.6 }}>
                                         {item.content}
                                     </Text>
                                 </Accordion.Panel>
@@ -194,6 +250,72 @@ const Contact = () => {
                 </Card>
             </motion.div>
 
+            {/* Image Gallery Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                style={{ marginBottom: '4rem' }}
+            >
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
+                    Our Community in Action
+                </Title>
+                <Grid gutter="md">
+                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                        <Image 
+                            src={abayudaya1} 
+                            alt="Community Life" 
+                            style={{ 
+                                width: '100%', 
+                                height: '200px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                        <Image 
+                            src={abayudaya2} 
+                            alt="Students Learning" 
+                            style={{ 
+                                width: '100%', 
+                                height: '200px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                        <Image 
+                            src={abayudaya3} 
+                            alt="Community Activities" 
+                            style={{ 
+                                width: '100%', 
+                                height: '200px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                        <Image 
+                            src={abayudaya4} 
+                            alt="Educational Programs" 
+                            style={{ 
+                                width: '100%', 
+                                height: '200px', 
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </Grid.Col>
+                </Grid>
+            </motion.div>
+
             {/* Supporting Organizations */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -201,28 +323,31 @@ const Contact = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 style={{ marginBottom: '4rem' }}
             >
-                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+                <Title order={2} mb="lg" style={{ color: '#1e3c72', textAlign: 'center', fontWeight: 700 }}>
                     Our Supporting Partners
                 </Title>
-                <Group justify="center" gap="lg" wrap="wrap">
+                <Grid gutter="lg">
                     {[
                         'Jewish Federation of Princeton Mercer Bucks',
                         'Buffalo Jewish Federation', 
                         'Federation of Jewish Men\'s Clubs',
                         'The Jewish Center of Princeton'
                     ].map((org, index) => (
-                        <Card key={index} shadow="lg" padding="md" radius="lg" style={{ 
-                            backgroundColor: 'rgba(255,255,255,0.9)',
-                            minWidth: '250px',
-                            textAlign: 'center',
-                            border: `3px solid ${['#FF6B35', '#F7931E', '#06FFA5', '#00D4FF'][index % 4]}`
-                        }}>
-                            <Text fw={600} style={{ color: '#1e3c72' }}>
-                                {org}
-                            </Text>
-                        </Card>
+                        <Grid.Col key={index} span={{ base: 12, sm: 6, md: 3 }}>
+                            <Card shadow="lg" padding="lg" radius="lg" style={{ 
+                                backgroundColor: 'white',
+                                border: '2px solid #e9ecef',
+                                textAlign: 'center',
+                                height: '100%'
+                            }}>
+                                <IconStar size={40} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
+                                <Text fw={600} style={{ color: '#1e3c72', lineHeight: 1.4 }}>
+                                    {org}
+                                </Text>
+                            </Card>
+                        </Grid.Col>
                     ))}
-                </Group>
+                </Grid>
             </motion.div>
 
             {/* Call to Action */}
@@ -232,12 +357,17 @@ const Contact = () => {
                 transition={{ duration: 0.8, delay: 1.0 }}
                 style={{ textAlign: 'center' }}
             >
-                <Card shadow="lg" padding="xl" radius="lg" style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '3px solid #FF6B35' }}>
-                    <IconHeart size={60} style={{ margin: '0 auto 1rem', display: 'block', color: '#FF6B35' }} />
-                    <Title order={2} mb="md" style={{ color: '#1e3c72' }}>
+                <Card shadow="lg" padding="xl" radius="lg" style={{ 
+                    backgroundColor: '#f8f9fa', 
+                    border: '2px solid #e9ecef',
+                    maxWidth: '800px',
+                    margin: '0 auto'
+                }}>
+                    <IconHeart size={60} style={{ margin: '0 auto 1rem', display: 'block', color: '#1e3c72' }} />
+                    <Title order={2} mb="md" style={{ color: '#1e3c72', fontWeight: 700 }}>
                         Ready to Make a Difference?
                     </Title>
-                    <Text size="lg" mb="xl" style={{ maxWidth: '600px', margin: '0 auto', color: '#1e3c72' }}>
+                    <Text size="lg" mb="xl" style={{ maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, color: '#495057' }}>
                         Your support can transform the lives of the Jewish people of Uganda. 
                         Join us in preserving their rich cultural heritage and ensuring a bright future for generations to come.
                     </Text>
@@ -246,7 +376,8 @@ const Contact = () => {
                             size="lg" 
                             variant="filled" 
                             onClick={() => navigate('/donate')}
-                            style={{ backgroundColor: '#FF6B35', border: 'none' }}
+                            style={{ backgroundColor: '#1e3c72', border: 'none', fontWeight: 600 }}
+                            leftSection={<IconHeart size={20} />}
                         >
                             Donate Now
                         </Button>
@@ -254,27 +385,13 @@ const Contact = () => {
                             size="lg" 
                             variant="outline" 
                             onClick={() => navigate('/about')}
-                            style={{ borderColor: '#1e3c72', color: '#1e3c72' }}
+                            style={{ borderColor: '#1e3c72', color: '#1e3c72', fontWeight: 600 }}
                         >
                             Learn More
                         </Button>
                     </Group>
                 </Card>
             </motion.div>
-
-            <style jsx>{`
-                .contact-container {
-                    padding-left: 1rem !important;
-                    padding-right: 1rem !important;
-                }
-
-                @media (min-width: 768px) {
-                    .contact-container {
-                        padding-left: 20rem !important;
-                        padding-right: 20rem !important;
-                    }
-                }
-            `}</style>
         </Container>
     );
 };

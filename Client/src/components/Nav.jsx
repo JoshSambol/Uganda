@@ -1,11 +1,10 @@
-import { Group, ActionIcon, Text, Button, Container, Stack, Burger, Drawer } from '@mantine/core';
+import { Group, ActionIcon, Text, Button, Container, Stack, Burger, Drawer, Image } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconMenu2 } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Title, Card } from '@mantine/core';
-import heroImage16x9 from '../assets/16-9.png';
-import heroImage9x16 from '../assets/9-16.png';
+import abayudayaLogo from '../assets/Abayudaya Logo.png';
 
 const Nav = () => {
     const navigate = useNavigate();
@@ -14,6 +13,8 @@ const Nav = () => {
     const navItems = [
         { label: 'Home', path: '/' },
         { label: 'About', path: '/about' },
+        { label: 'Schools', path: '/schools' },
+        { label: 'Gallery', path: '/gallery' },
         { label: 'Donate', path: '/donate' },
         { label: 'Contact', path: '/contact' }
     ];
@@ -34,20 +35,39 @@ const Nav = () => {
                     zIndex: 1000, 
                     backgroundColor: 'rgba(255, 255, 255, 0.95)', 
                     backdropFilter: 'blur(10px)',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderBottom: '1px solid rgba(30, 60, 114, 0.1)',
                     padding: '1rem',
-                    minWidth: '100vw'
+                    minWidth: '100vw',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                 }}
             >
                 <Group justify="space-between" align="center">
-                    <Text 
-                        size="lg" 
-                        fw={600} 
+                    <Group 
                         style={{ cursor: 'pointer' }}
                         onClick={() => navigate('/')}
+                        gap="sm"
                     >
-                        Friends of the Abayudaya
-                    </Text>
+                        <Image 
+                            src={abayudayaLogo} 
+                            alt="Abayudaya Logo" 
+                            style={{ width: '40px', height: '40px' }}
+                        />
+                        <div>
+                            <Text 
+                                size="lg" 
+                                fw={700} 
+                                style={{ color: '#1e3c72', lineHeight: 1.2 }}
+                            >
+                                Friends of the Abayudaya
+                            </Text>
+                            <Text 
+                                size="xs" 
+                                style={{ color: '#495057', lineHeight: 1 }}
+                            >
+                                Supporting Jewish Education in Uganda
+                            </Text>
+                        </div>
+                    </Group>
                     
                     {/* Desktop Navigation */}
                     <Group gap="md" className="desktop-nav">
@@ -57,12 +77,17 @@ const Nav = () => {
                                 variant="subtle" 
                                 p={'sm'}
                                 onClick={() => handleNavClick(item.path)}
-                                style={{ color: '#1e3c72'}}
+                                style={{ 
+                                    color: '#1e3c72',
+                                    fontWeight: 500,
+                                    borderRadius: '8px',
+                                    transition: 'all 0.2s ease'
+                                }}
+                                className="nav-button"
                             >
                                 {item.label}
                             </Button>
                         ))}
-
                     </Group>
                     {/* Mobile Hamburger Menu */}
                     <Burger
@@ -121,6 +146,11 @@ const Nav = () => {
                 
                 .mobile-nav {
                     display: block;
+                }
+                
+                .nav-button:hover {
+                    background-color: rgba(30, 60, 114, 0.1) !important;
+                    transform: translateY(-1px);
                 }
                 
                 @media (min-width: 768px) {

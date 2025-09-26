@@ -6,21 +6,29 @@ import Nav from './components/Nav'
 import About from './pages/About'
 import Donate from './pages/Donate'
 import Contact from './pages/Contact'
+import Schools from './pages/Schools'
+import Gallery from './pages/Gallery'
+import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 function App() {
 
   return (
     <>
       <Router>
+        <ScrollToTop />
         <div style={{ position: 'relative' }}>
           <Nav />
           <div style={{ marginTop: '60px' }}>
             <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/contact" element={<Contact />} />
+                    <Route path="/" element={<Landing />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/schools" element={<Schools />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/donate" element={<Donate />} />
+                    <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
+          <Footer />
         </div>
       </Router>
     </>
