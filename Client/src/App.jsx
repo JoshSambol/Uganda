@@ -7,6 +7,7 @@ import About from './pages/About'
 import Donate from './pages/Donate'
 import Contact from './pages/Contact'
 import Schools from './pages/Schools'
+import Gallery from './pages/Gallery'
 function App() {
 
   return (
@@ -16,11 +17,12 @@ function App() {
           <Nav />
           <div style={{ marginTop: '60px' }}>
             <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/schools" element={<Schools />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/contact" element={<Contact />} />
+                    <Route path="/" element={<Landing />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/schools" element={<Schools />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/donate" element={<Donate />} />
+                    <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
         </div>

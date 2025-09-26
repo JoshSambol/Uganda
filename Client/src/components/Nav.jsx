@@ -14,6 +14,7 @@ const Nav = () => {
         { label: 'Home', path: '/' },
         { label: 'About', path: '/about' },
         { label: 'Schools', path: '/schools' },
+        { label: 'Gallery', path: '/gallery' },
         { label: 'Donate', path: '/donate' },
         { label: 'Contact', path: '/contact' }
     ];
